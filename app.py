@@ -5,7 +5,12 @@ import os
 import qrcode
 from PIL import Image
 import io
+import subprocess
+import sys
 
+# 强制安装依赖库
+subprocess.check_call([sys.executable, "-m", "pip", "install",
+                      "streamlit", "pandas", "qrcode[pil]"])
 # 数据库文件路径（自动生成在app.py同目录）
 db_path = os.path.join(os.path.dirname(__file__), "platform.db")
 
